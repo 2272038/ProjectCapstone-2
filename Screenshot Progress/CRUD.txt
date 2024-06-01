@@ -1,0 +1,13 @@
+User dapat mengakses
+Profile untuk melihat data mereka,
+MataKuliah untuk melihat ada matakuliah apa saja, 
+Polling untuk saat ini polling belum dibuat.
+
+Admin dapat mengakses
+Profile unutk melihat data mereka,
+User untuk menambah, menghapus, dan mengedit user.
+
+Program Studi dapat mengakses 
+Profile untuk melihat data mereka,
+Mata Kuliah untuk menambah, mengedit, menghapus, dan melihat Mata Kuliah yang ada,
+Create Polling untuk membuat polling baru
