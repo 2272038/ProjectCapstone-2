@@ -14,7 +14,7 @@
 {{--           });--}}
 {{--        });--}}
 {{--    </script>--}}
-    <title>@yield('title', 'Course Voting')</title>
+    <title>@yield('title', 'internal scholarships')</title>
     <style>
         #menu-toggle:checked + #menu {
             display: block;
@@ -35,7 +35,7 @@
             <header class="lg:px-16 px-6 bg-white flex flex-wrap items-center justify-between shadow fixed top-0 w-screen z-20">
                 @endif
                 <div class="flex gap-5 items-center">
-                    <a class="text-lg font-bold" href="/user">Course Voting</a>
+                    <a class="text-lg font-bold" href="/user">internal scholarships</a>
                     @if(auth()->check())
                         <p>{{auth()->user()->nama}}</p>
                     @endif
@@ -48,9 +48,10 @@
                     <div>
                         <nav>
                             <ul class="lg:flex lg:mb-0 items-center justify-between text-base text-gray-700 pt-4 mb-2 lg:pt-0">
-                                <li><a class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400" href="#">Polling</a></li>
-                                <li><a class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400" href="{{route('user-mata-kuliah')}}">Mata Kuliah</a></li>
-                                <li><a class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400" href="{{route('user-profile')}}">Profile</a></li>
+                                <li><a class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400" href="{{ route('polling') }}">Polling</a></li>
+                                <li><a class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400" href="{{ route('user-mata-kuliah') }}">Mata Kuliah</a></li>
+                                <li><a class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400" href="{{ route('user-profile') }}">Profile</a></li>
+                            </ul>
                                 <!-- <li>
             <a href="#" class="lg:ml-4 flex items-center justify-start lg:mb-0 mb-4 pointer-cursor">
               <img class="rounded-full w-10 h-10 border-2 border-transparent hover:border-indigo-400" src="https://pbs.twimg.com/profile_images/1128143121475342337/e8tkhRaz_normal.jpg" alt="Andy Leverenz">

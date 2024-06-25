@@ -20,6 +20,8 @@ class CheckAdminMiddleware
             return $next($request);
         } else if (Auth::check() && Auth::user()->isProdi()) {
             return $next($request);
+        } else if (Auth::check() && Auth::user()->isFakultas()) {
+            return $next($request);
         } else {
             return redirect()->back();
         }

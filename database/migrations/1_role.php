@@ -22,10 +22,13 @@ return new class extends Migration
                  'name' => 'Admin',
                 ],
             [    'id' => '2',
-                'name' => 'Prodi',
+                'name' => 'Mahasiswa',
             ],
             [    'id' => '3',
-                'name' => 'User',
+                'name' => 'Prodi',
+            ],
+            [    'id' => '4',
+                'name' => 'Fakultas',
             ]
         ]);
     }
@@ -35,6 +38,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        Schema::dropIfExists('role');
     }
 };

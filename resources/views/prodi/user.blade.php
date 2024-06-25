@@ -1,5 +1,5 @@
 @extends('layout.prodi')
-@section('title', 'Course Voting - Prodi Users')
+@section('title', 'internal scholarships - Prodi Users')
 
 @section('content')
     <div class="m-4">

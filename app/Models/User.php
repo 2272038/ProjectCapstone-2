@@ -13,7 +13,7 @@ class User extends Authenticatable
     use HasApiTokens, HasFactory, Notifiable;
 
     protected $table = "user";
-    protected $primaryKey = "id";
+    protected $primaryKey = "nrp";
     protected $keyType = "string";
     public $incrementing = false;
     public $timestamps = true;
@@ -29,6 +29,7 @@ class User extends Authenticatable
         'email',
         'password',
         'role_id',
+        'prodi_id',
     ];
 
     /**
@@ -53,16 +54,26 @@ class User extends Authenticatable
         return $this->role_id === 1;
     }
 
-    public function isProdi() {
+    public function idMahasiswa() {
         return $this->role_id === 2;
     }
-    public function isUser()
+    public function isProdi()
     {
         return $this->role_id === 3;
+    }
+    public function isFakultas()
+    {
+        return $this->role_id === 4;
     }
 
     public function role()
     {
         return $this->belongsTo(Role::class, 'role_id');
     }
+
+    public function prodi()
+    {
+        return $this->belongsTo(Prodi::class, 'prodi_id');
+    }
+
 }

@@ -33,6 +33,11 @@ class Controller extends BaseController
     {
         return Response()->view('user.index');
     }
+
+    public function indexFakultas()
+    {
+        return Response()->view('fakultas.index');
+    }
     public function userLogin(Request $request)
     {
 //        $user = User::where('nrp', $request->input('nrp'))->where('password', $request->input('password'))->first();
@@ -45,8 +50,10 @@ class Controller extends BaseController
             Session::regenerate();
             if (Auth::user()['role_id'] === 1) {
                 return redirect('/admin');
-            } else if (Auth::user()['role_id'] === 2) {
+            } else if (Auth::user()['role_id'] === 3) {
                 return redirect('/prodi');
+            } else if (Auth::user()['role_id'] === 4) {
+                return redirect('/fakultas');
             }
             return redirect('/user');
         } else {
@@ -60,3 +67,4 @@ class Controller extends BaseController
         return redirect('/');
     }
 }
+

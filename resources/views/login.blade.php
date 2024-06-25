@@ -5,7 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Login</title>
+    <title>Capstone2</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.5.0/dist/full.min.css" rel="stylesheet" type="text/css"/>
     <style>
@@ -26,16 +26,19 @@
         <h2 class="text-center text-3xl font-bold text-gray-900">Login</h2>
     </div>
 
-    <div id="error-message" class="hidden bg-red-100 w-fit h-[50px] px-2 mt-4 place-self-center flex items-center rounded-md border border-solid border-red-300 z-10">
-        <p></p>
+    @error('error')
+    <div class="bg-red-100 w-fit h-[50px] px-2 mt-4 place-self-center flex items-center rounded-md border border-solid border-red-300 z-10">
+        <p>{{$message}}</p>
     </div>
+    @enderror
 
     <div class="mt-4 sm:mx-auto sm:w-full sm:max-w-md z-10 shadow-2xl rounded-xl">
         <div class="bg-white py-8 px-6 shadow rounded-xl sm:px-10">
-            <form class="mb-0 space-y-6" method="POST" id="login-form">
+            <form class="mb-0 space-y-6" method="POST">
+                @csrf
                 <label for="nrp" class="input input-bordered flex items-center gap-2">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4 opacity-70"><path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM12.735 14c.618 0 1.093-.561.872-1.139a6.002 6.002 0 0 0-11.215 0c-.22.578.254 1.139.872 1.139h9.47Z" /></svg>
-                    <input id="nrp" name="nrp" type="text" required class="grow" placeholder="NRP" />
+                    <input id="nrp" name="nrp" type="text" required class="grow" placeholder="NIK/NRP" />
                 </label>
 
                 <label for="password" class="input input-bordered flex items-center gap-2">
@@ -52,21 +55,6 @@
 </div>
 <script src="{{ asset('js/particles.js') }}"></script>
 <script src="{{ asset('js/app.js') }}"></script>
-<script>
-    document.getElementById('login-form').addEventListener('submit', function(event) {
-        event.preventDefault();
-        const nrp = document.getElementById('nrp').value;
-        const password = document.getElementById('password').value;
-        const errorMessage = document.getElementById('error-message');
 
-        // Replace this with your actual login logic
-        if (nrp === 'test' && password === 'test') {
-            window.location.href = '/dashboard'; // Redirect to the user layout/dashboard
-        } else {
-            errorMessage.querySelector('p').textContent = 'Invalid NRP or password';
-            errorMessage.classList.remove('hidden');
-        }
-    });
-</script>
 </body>
 </html>

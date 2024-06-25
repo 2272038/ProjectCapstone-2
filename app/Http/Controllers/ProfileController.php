@@ -19,6 +19,12 @@ class ProfileController extends Controller
         $user = User::query()->where('nrp', Auth::user()['nrp'])->get();
         return Response()->view('prodi.profile', ['user' => $user[0]]);
     }
+
+    public function profileFakultas(Request $request)
+    {
+        $user = User::query()->where('nrp', Auth::user()['nrp'])->get();
+        return Response()->view('fakultas.profile', ['user' => $user[0]]);
+    }
     public function profileUser()
     {
         return Response()->view('user.profile');

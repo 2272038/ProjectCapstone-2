@@ -7,7 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.5.0/dist/full.min.css" rel="stylesheet" type="text/css" />
-    <title>@yield('title', 'Course Voting')</title>
+    <title>@yield('title', 'Capstone2')</title>
     <style>
         #menu-toggle:checked+#menu {
             display: block;
@@ -34,7 +34,7 @@
                     class="lg:px-16 px-6 bg-white flex flex-wrap items-center justify-between shadow fixed top-0 w-screen z-20">
 @endif
 <div class="flex gap-5 items-center">
-    <a class="text-lg font-bold" href="/admin">Course Voting</a>
+    <a class="text-lg font-bold" href="/admin">internal scholarships</a>
     @if (auth()->check())
         <p>{{ auth()->user()->nama }}</p>
     @endif
@@ -54,6 +54,12 @@
             <ul class="lg:flex lg:mb-0 items-center justify-between text-base text-gray-700 pt-4 mb-2 lg:pt-0">
                 <li><a class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400"
                         href="{{ route('admin-users') }}">User</a></li>
+                <li><a class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400"
+                       href="{{ route('admin.prodi') }}">Prodi</a></li>
+                <li><a class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400"
+                       href="{{ route('admin-periode') }}">Periode</a></li>
+                <li><a class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400"
+                       href="{{ route('admin-jenis_beasiswa') }}">Beasiswa</a></li>
                 <li><a class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400"
                         href="{{ route('admin-profile') }}">Profile</a></li>
                 <!-- <li>
